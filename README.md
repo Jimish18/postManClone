@@ -1,3 +1,3 @@
 # postManClone
 A GET/POST request website
-- Using FetchAPI concept
+- Using FetchAPI concept of JavaScript
