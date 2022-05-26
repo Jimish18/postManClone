@@ -1,12 +1,147 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
+
 <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Post Master </title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Post Master</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor" crossorigin="anonymous">
 </head>
+
 <body>
+
+    <nav class="navbar navbar-expand-lg bg-dark navbar-dark">
+        <div class="container-fluid">
+          <a class="navbar-brand" href="#">Navbar</a>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+              <li class="nav-item">
+                <a class="nav-link active" aria-current="page" href="#">Home</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="#">Link</a>
+              </li>
+            </ul>
+            <form class="d-flex" role="search">
+              <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
+              <button class="btn btn-outline-success" type="submit">Search</button>
+            </form>
+          </div>
+        </div>
+      </nav>
+
+    <div class="container my-3">
+        <h1>Welcome to Post Master</h1>
+        <hr>
+        <form>
+            <div class="row  align-items-center mx-auto">
+                <div class="col col-2">
+                  <label for="url" class="col-form-label">URL</label>
+                </div>
+                <div class="col col-8">
+                  <input type="text" id="url" class="form-control" placeholder="Enter URL">
+                </div>
+            </div> 
+
+            <div class="container my-3 row" id="requestTypeRadioContainer">
+                <div class="col col-2">
+                    <label for="requestType" class="col-form-label">Request Type</label>
+                </div>
+
+                <div class="col col-8">
+                    <div class="form-check">
+                        <input class="form-check-input" type="radio" name="requestType" id="get" checked>
+                        <label class="form-check-label" for="get">
+                          GET 
+                        </label>
+                    </div>
+                    <div class="form-check">
+                        <input class="form-check-input" type="radio" name="requestType" id="post" >
+                        <label class="form-check-label" for="post">
+                          POST 
+                        </label>
+                    </div>
+                </div>
+
+                
+            </div>
+
+            <div class="container my-3 row" id="contentTypeRadioContainer">
+                <div class="col col-2">
+                    <label for="contentType" class="col-form-label">Content Type</label>
+                </div>
+
+                <div class="col col-8">
+                    <div class="form-check">
+                        <input class="form-check-input" type="radio" name="contentType" id="json" checked>
+                        <label class="form-check-label" for="json">
+                          JSON 
+                        </label>
+                    </div>
+                    <div class="form-check">
+                        <input class="form-check-input" type="radio" name="contentType" id="constomizeParams" >
+                        <label class="form-check-label" for="constomizeParams">
+                          Costomized Parameters 
+                        </label>
+                    </div>
+                </div>
+            </div>
+
+            <div class="container my-3 row" id="requestJSON">
+                <div class="col col-2">
+                    <label for="requestJSON" class="col-form-label">Enter Request JSON</label>
+                </div>
+
+                <div class="form-group w-75 ">
+                    <textarea type="text" class="form-control" id="requestJSON" ></textarea>
+                </div>
+            </div>
+
+            <div class="container my-3 row" id="parameters">
+                <div class="col col-2">
+                    <label for="key" class="col-form-label">Parameter 1</label>
+                </div>
+
+                <div class="row col col-8">
+                    <div class="col">
+                      <input type="text" class="form-control" placeholder="Key" id="key">
+                    </div>
+                    <div class="col">
+                      <input type="text" class="form-control" placeholder="value" id="value">
+                    </div>
+                    <div class="btn btn-primary col-auto" id="submitParameter">&#x0002B;</div>
+                </div>
+            </div>
+
+            <div class="btn btn-primary my-3 mx-3" id="submitBtn">Submit</div>
+        </form>
+        <hr>
+        <div class="container my-3 row" id="response">
+            <div class="col col-2">
+                <label for="responseJSON" class="col-form-label">Response</label>
+            </div>
+
+            <div class="form-group w-75 ">
+                <textarea type="text" class="form-control" id="responseJSON" rows="5"></textarea>
+            </div>
+        </div>
+
+    </div>
+
+
+
+
+
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-pprn3073KE6tl6bjs2QrFaJGz5/SUsLqktiwsUTF55Jfv3qYSDhgCecCxMW52nD2"
+        crossorigin="anonymous"></script>
+
     <script src="app.js"></script>
 </body>
+
 </html>
