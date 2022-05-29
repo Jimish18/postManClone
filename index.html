@@ -13,7 +13,7 @@
 
     <nav class="navbar navbar-expand-lg bg-dark navbar-dark">
         <div class="container-fluid">
-          <a class="navbar-brand" href="#">Navbar</a>
+          <a class="navbar-brand" href="#">Post Master</a>
           <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
           </button>
@@ -38,104 +38,106 @@
       </nav>
 
     <div class="container my-3">
-        <h1>Welcome to Post Master</h1>
-        <hr>
-        <form>
-            <div class="row  align-items-center mx-auto">
-                <div class="col col-2">
-                  <label for="url" class="col-form-label">URL</label>
-                </div>
-                <div class="col col-8">
-                  <input type="text" id="url" class="form-control" placeholder="Enter URL">
-                </div>
-            </div> 
+      <h1>Welcome to Post Master</h1>
+      <hr>
 
-            <div class="container my-3 row" id="requestTypeRadioContainer">
-                <div class="col col-2">
-                    <label for="requestType" class="col-form-label">Request Type</label>
-                </div>
+      <form id="requestForm">
 
-                <div class="col col-8">
-                    <div class="form-check">
-                        <input class="form-check-input" type="radio" name="requestType" id="get" checked>
-                        <label class="form-check-label" for="get">
-                          GET 
-                        </label>
-                    </div>
-                    <div class="form-check">
-                        <input class="form-check-input" type="radio" name="requestType" id="post" >
-                        <label class="form-check-label" for="post">
-                          POST 
-                        </label>
-                    </div>
-                </div>
-
-                
-            </div>
-
-            <div class="container p-0" id="postDetailContainer">
-                <div class="container my-3 row" id="contentTypeRadioContainer">
-                    <div class="col col-2">
-                        <label for="contentType" class="col-form-label">Content Type</label>
-                    </div>
-    
-                    <div class="col col-8">
-                        <div class="form-check">
-                            <input class="form-check-input" type="radio" name="contentType" id="json" checked>
-                            <label class="form-check-label" for="json">
-                              JSON 
-                            </label>
-                        </div>
-                        <div class="form-check">
-                            <input class="form-check-input" type="radio" name="contentType" id="constomizeParams" >
-                            <label class="form-check-label" for="constomizeParams">
-                              Costomized Parameters 
-                            </label>
-                        </div>
-                    </div>
-                </div>
-    
-                <div class="container my-3 row" id="requestJSON">
-                    <div class="col col-2">
-                        <label for="requestJSON" class="col-form-label">Enter Request JSON</label>
-                    </div>
-    
-                    <div class="form-group w-75 ">
-                        <textarea type="text" class="form-control" id="requestJSON" ></textarea>
-                    </div>
-                </div>
-    
-                <div class="container p-0" id="parameterContainer">
-                    <div class="container my-3 row" id="parameters">
-                        <div class="col col-2">
-                            <label for="key" class="col-form-label">Parameter 1</label>
-                        </div>
-        
-                        <div class="row col col-8">
-                            <div class="col">
-                              <input type="text" class="form-control" placeholder="Key" id="key">
-                            </div>
-                            <div class="col">
-                              <input type="text" class="form-control" placeholder="value" id="value">
-                            </div>
-                            <div class="btn btn-primary col-auto" id="submitParameter">&#x0002B;</div>
-                        </div>
-                    </div>
-                </div>
-    
-                <div class="btn btn-primary my-3 mx-3" id="submitBtn">Submit</div>
-            </div>
-        </form>
-        <hr>
-        <div class="container my-3 row" id="response">
+        <div class="row  align-items-center mx-auto">
             <div class="col col-2">
-                <label for="responseJSON" class="col-form-label">Response</label>
+              <label for="url" class="col-form-label">URL</label>
+            </div>
+            <div class="col col-8">
+              <input type="text" id="url" class="form-control" placeholder="Enter URL">
+            </div>
+        </div> 
+
+        <div class="container my-3 row" id="requestTypeRadioContainer">
+            <div class="col col-2">
+                <label for="requestType" class="col-form-label">Request Type</label>
             </div>
 
-            <div class="form-group w-75 ">
-                <textarea type="text" class="form-control" id="responseJSON" rows="5"></textarea>
+            <div class="col col-8">
+                <div class="form-check">
+                    <input class="form-check-input" type="radio" name="requestType" id="get" value="get"  checked>
+                    <label class="form-check-label" for="get">
+                      GET 
+                    </label>
+                </div>
+                <div class="form-check">
+                    <input class="form-check-input" type="radio" name="requestType" id="post" value="post">
+                    <label class="form-check-label" for="post">
+                      POST 
+                    </label>
+                </div>
             </div>
+
+            
         </div>
+
+        <div class="container p-0" id="postDetailContainer">
+          <div class="container my-3 row" id="contentTypeRadioContainer">
+            <div class="col col-2">
+                <label for="contentType" class="col-form-label">Content Type</label>
+            </div>
+
+            <div class="col col-8">
+                <div class="form-check">
+                    <input class="form-check-input" type="radio" name="contentType" id="json" value="json" checked>
+                    <label class="form-check-label" for="json">
+                      JSON 
+                    </label>
+                </div>
+                <div class="form-check">
+                    <input class="form-check-input" type="radio" name="contentType" id="customizeParams" value="customizeParams">
+                    <label class="form-check-label" for="customizeParams">
+                      Customized Parameters 
+                    </label>
+                </div>
+            </div>
+          </div>
+
+          <div class="container my-3 row" id="requestJSON">
+              <div class="col col-2">
+                  <label for="requestJSON" class="col-form-label">Enter Request JSON</label>
+              </div>
+
+              <div class="form-group w-75 ">
+                  <textarea type="text" class="form-control" id="requestJSONText" rows="5"></textarea>
+              </div>
+          </div>
+
+          <div class="container row" id="parameterContainer">
+            <div class="container my-2 row" id="parameters">
+              <div class="col col-2">
+                  <label for="key" class="col-form-label">Parameter 1</label>
+              </div>
+
+              <div class="row col col-8">
+                  <div class="col">
+                    <input type="text" class="form-control" placeholder="Key 1" id="key1">
+                  </div>
+                  <div class="col">
+                    <input type="text" class="form-control" placeholder="value 1" id="value1">
+                  </div>
+                  <div class="btn btn-primary col-auto" id="submitParameter">&#x0002B;</div>
+              </div>
+            </div>
+            <!-- <div id="params" ></div> -->
+          </div>          
+        </div>
+        <div class="btn btn-primary my-3 mx-3" id="submitBtn">Submit</div>
+      </form>
+      <hr>
+      <div class="container my-3 row" id="response">
+          <div class="col col-2">
+              <label for="responseJSON" class="col-form-label">Response</label>
+          </div>
+
+          <div class="form-group w-75 ">
+              <textarea type="text" class="form-control" id="responseJSON" rows="5"></textarea>
+          </div>
+      </div>
 
     </div>
 
