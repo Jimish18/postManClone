@@ -97,7 +97,7 @@ submitBtn.addEventListener("click",()=>
 {
 
     let responseJSON = document.getElementById("responseJSON");
-    responseJSON.value = `Please wait... fetching your requested data...`;
+    responseJSON.innerHTML = `Please wait... fetching your requested data...`;
 
     let url = document.getElementById("url").value;
     let requestType = document.querySelector("input[name = 'requestType']:checked").value;
@@ -123,7 +123,7 @@ submitBtn.addEventListener("click",()=>
     }
     else
     {
-        data = document.getElementById("requestJSONText").value;
+        data = document.getElementById("requestJSONText").innerHTML;
     }
 
     // logging values for debugging 
@@ -141,7 +141,7 @@ submitBtn.addEventListener("click",()=>
             method : `GET`,
         }).then(data => data.text())
         .then((text) => {
-            responseJSON.value = text;
+            responseJSON.innerHTML = text;
         });
         responseJSON.rows = 12;
     }
@@ -154,7 +154,7 @@ submitBtn.addEventListener("click",()=>
 
         }).then(data => data.text())
         .then((text) => {
-            responseJSON.value = text;
+            responseJSON.innerHTML = text;
         })
     }
 })
